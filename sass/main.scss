@@ -1,0 +1,76 @@
+// to  calling other scss file 
+@import "mixing";
+@import "var";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 1.operator
+// 2. variable
+// 3. nesting
+// 4. mixing - some code (common property) write everytime so we sue mixing 
+// 5. mixing -parameter -> you want something thing differenct from other 
+// 6. partials -> so that we can create new page for the some code and then call it use it to write partials file use _
+
+
+
+html {
+    font-size: 62.5%;
+}
+
+
+
+.main_header {
+    @include Any_name;
+    width: 100wh;
+    height: 100vh;
+
+    background: $bg-color;
+
+    // -------------> nesting <--------------
+    h1 {
+        color: $h-color;
+        // you can add into this also but this will reflect
+        // ----> operator <-----------
+        font-size: 2rem+2rem;
+        @include common(0.8rem);
+
+        // if h1 ki jagah kuch class hoti to har jagah class na like to we use &
+        &:hover {
+            color: gray;
+        }
+
+        &::after {
+            content: " Boy";
+        }
+    }
+
+    p {
+        // --------> variable  <---------
+        color: $h-color;
+        font-size: 4rem;
+
+        @include common(0.1rem);
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+
+}
+
+// h1 {
+//     color: $h-color;
+//     // you can add into this also but this will reflect
+//     font-size: 4rem;
+
+// }
+// p{
+//     color: $h-color;
+//     font-size: 4rem;
+// }

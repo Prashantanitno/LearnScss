@@ -1,0 +1,14 @@
+//-------------> mixing  <-----------
+
+@mixin Any_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+@mixin common($para1) {
+    letter-spacing: $para1;
+    text-transform: capitalize
+}
